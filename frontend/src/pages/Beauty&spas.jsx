@@ -5,7 +5,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 import { IoLocationSharp } from 'react-icons/io5';
 import { TbCurrentLocation } from 'react-icons/tb';
 import ReadMoreExample from '../beauty/Qsans';
-import Beautyfo from '../beauty/beautyfo';
+import Beautyfo from '../beauty/Beautyfo';
 import { BiChevronDown, BiFilter, BiSlider } from 'react-icons/bi';
 import { CiMap } from 'react-icons/ci';
 import { GoArrowLeft } from 'react-icons/go';

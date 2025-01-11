@@ -11,7 +11,6 @@ import NearQs from '../nearby/NearQs'
 import Nearfo from '../nearby/NearFo'
 import NearData from '../components/NearData'
 
-
 const Nearby = () => {
   return (
     <Box>
@@ -25,23 +24,22 @@ const Nearby = () => {
         </BreadcrumbItem>
       </Breadcrumb>
 
-
-      <Flex  marginTop={5} p={3}>
-        <Flex p={2} gap={2}>
+      <Flex marginTop={5} p={3} flexDirection={{ base: 'column', sm: 'row' }} alignItems="center" justifyContent="space-between">
+        <Flex p={2} gap={2} align="center">
           <Box p={2}>
             <GoArrowLeft size={30} />
           </Box>
-          <Text fontWeight={700} fontSize={30}>Deals in and near</Text>
+          <Text fontWeight={700} fontSize={{ base: '24px', sm: '30px' }}>Deals in and near</Text>
         </Flex>
-        <Menu >
+        <Menu>
           {({ isOpen }) => (
             <>
-              <MenuButton fontWeight={700} fontSize={30} isActive={isOpen} as={Text} borderRadius={20} m={2}>
+              <MenuButton fontWeight={700} fontSize={{ base: '18px', sm: '30px' }} isActive={isOpen} as={Text} borderRadius={20} m={2}>
                 {isOpen ? 'Chicago,IL' : 'Chicago,IL'}
               </MenuButton>
               <MenuList>
-                <Card w={600}>
-                  <CardBody >
+                <Card w={{ base: 'full', sm: 600 }}>
+                  <CardBody>
                     <InputGroup>
                       <InputLeftElement pointerEvents='none'>
                         <IoLocationSharp />
@@ -62,10 +60,10 @@ const Nearby = () => {
         </Menu>
       </Flex>
 
-      <Nearlogo />
+      {/* <Nearlogo /> */}
 
-      <Flex justifyContent="space-between" p={5}>
-        <Flex gap={2}>
+      <Flex justifyContent="space-between" p={5} wrap="wrap" direction={{ base: 'column', sm: 'row' }} align="center">
+        <Flex gap={2} mb={{ base: 4, sm: 0 }}>
           <Flex border="1px solid #eeeff1" p={2} gap={1} borderRadius={20} backgroundColor="#eeeff1">
             <BiSlider size={25} />
             <Text fontWeight={600}>Show Filters</Text>
@@ -73,26 +71,18 @@ const Nearby = () => {
           <Text p={2}>5,536 deals</Text>
         </Flex>
         <Flex gap={2}>
-          <Flex border="1px solid #eeeff1" p={2} gap={1} borderRadius={20} backgroundColor="#eeeff1">
-            <BiFilter size={25} />
-            <Text fontWeight={600}>Sort</Text>
-            <BiChevronDown size={25} />
-          </Flex>
-
           <Button leftIcon={<CiMap />} backgroundColor="white" border="1px solid" borderRadius={20}>
             Show on Map
           </Button>
         </Flex>
       </Flex>
 
-      <NearData/>
-
-      <NearData/>
+      <NearData />
 
       <NearQs />
 
-      <Flex direction="column">
-        <Text fontWeight={600} fontSize={25}>Frequently Asked Questions</Text>
+      <Flex direction="column" p={{ base: 4, sm: 10 }}>
+        <Text fontWeight={600} fontSize={{ base: '18px', sm: '25px' }}>Frequently Asked Questions</Text>
         <Accordion defaultIndex={[0]} allowMultiple>
           <AccordionItem>
             <h2>
@@ -132,7 +122,7 @@ const Nearby = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              There are numerous famous attractions in Chicago. These include the Navy Pier, the Art Institute of Chicago, the Skydeck Chicago - Willis Tower, and the Chicago Riverwalk, amongst others
+              There are numerous famous attractions in Chicago. These include the Navy Pier, the Art Institute of Chicago, the Skydeck Chicago - Willis Tower, and the Chicago Riverwalk, amongst others.
             </AccordionPanel>
           </AccordionItem>
 
@@ -163,12 +153,10 @@ const Nearby = () => {
               Chicago has a very comprehensive transportation system which includes the 'L' train, buses, taxis, rideshares like Uber and Lyft, and bike sharing with Divvy. It's also a walkable city with many attractions within walking distance depending on where you're staying.
             </AccordionPanel>
           </AccordionItem>
-
-
         </Accordion>
       </Flex>
 
-      <Nearfo/>
+      <Nearfo />
     </Box>
   )
 }

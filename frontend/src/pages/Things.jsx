@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Box, Breadcrumb,Text, BreadcrumbItem, BreadcrumbLink, Card, CardBody, Divider, Flex, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuList, Button, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from '@chakra-ui/react'
+import { Box, Breadcrumb, Text, BreadcrumbItem, BreadcrumbLink, Card, CardBody, Divider, Flex, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuList, Button, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from '@chakra-ui/react'
 import React from 'react'
 import { GoArrowLeft } from 'react-icons/go'
 import { IoLocationSharp } from 'react-icons/io5'
@@ -14,66 +14,62 @@ import ThingData from '../components/ThingData'
 const Things = () => {
   return (
     <Box>
-           <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-  </BreadcrumbItem>
+      <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+        </BreadcrumbItem>
 
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Nearby</BreadcrumbLink>
-  </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Nearby</BreadcrumbLink>
+        </BreadcrumbItem>
 
-  <BreadcrumbItem isCurrentPage>
-    <BreadcrumbLink href='#'>Things To Do</BreadcrumbLink>
-  </BreadcrumbItem>
-</Breadcrumb>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href='#'>Things To Do</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
-
-      
-<Flex  marginTop={5} p={3}>
-  <Flex p={2} gap={2}>
-    <Box p={2}>
-<GoArrowLeft size={30}  />
-</Box>
-      <Text fontWeight={700} fontSize={30}>Top Things To Do In</Text>
+      {/* Header Section */}
+      <Flex marginTop={5} p={3} direction={{ base: 'column', sm: 'row' }} align="center" justify="space-between">
+        <Flex p={2} gap={2} align="center">
+          <Box p={2}>
+            <GoArrowLeft size={30} />
+          </Box>
+          <Text fontWeight={700} fontSize={{ base: '24px', sm: '30px' }}>Top Things To Do In</Text>
+        </Flex>
+        <Menu>
+          {({ isOpen }) => (
+            <>
+              <MenuButton fontWeight={700} fontSize={{ base: '18px', sm: '30px' }} isActive={isOpen} as={Text} borderRadius={20} m={2}>
+                {isOpen ? 'Chicago,IL' : 'Chicago,IL'}
+              </MenuButton>
+              <MenuList>
+                <Card w={{ base: 'full', sm: 600 }}>
+                  <CardBody>
+                    <InputGroup>
+                      <InputLeftElement pointerEvents='none'>
+                        <IoLocationSharp />
+                      </InputLeftElement>
+                      <Input type='tel' placeholder='Zip Code, Neighborhood,City' />
+                    </InputGroup>
+                    <Flex p={5} gap={5}>
+                      <TbCurrentLocation size={20} color='blue' />
+                      <Text color='blue'>Set Current Location</Text>
+                    </Flex>
+                    <Divider />
+                    <Text p={10}></Text>
+                  </CardBody>
+                </Card>
+              </MenuList>
+            </>
+          )}
+        </Menu>
       </Flex>
-      <Menu >
-                     {({ isOpen }) => (
-                        <>
-                           <MenuButton fontWeight={700} fontSize={30} isActive={isOpen} as={Text}  borderRadius={20} m={2}>
-                              {isOpen ? 'Chicago,IL' : 'Chicago,IL'}
-                           </MenuButton>
-                           <MenuList>
-                           <Card w={600}>
-                           <CardBody >
-                           <InputGroup>
-                 <InputLeftElement pointerEvents='none'>
-                 <IoLocationSharp />
-                 </InputLeftElement>
-                 <Input type='tel' placeholder='Zip Code, Neighborhood,City' />
-                 </InputGroup>
-                 <Flex p={5} gap={5}>
-                 <TbCurrentLocation size={20} color='blue'/>
-                 <Text color='blue'>Set Current Location</Text>
-                 </Flex>
-                 <Divider />
-                 <Text p={10}></Text>
-                           </CardBody>
-                           </Card>
-                           </MenuList>
-                        </>
-                     )}
-                  </Menu>   
-    </Flex>
 
+      {/* <Thingslogo /> */}
 
-    <Thingslogo/>
-
-    
-
-
-    <Flex justifyContent="space-between" p={5}>
-        <Flex gap={2}>
+      {/* Filters and Map Button Section */}
+      <Flex justifyContent="space-between" p={5} wrap="wrap" direction={{ base: 'column', sm: 'row' }} align="center">
+        <Flex gap={2} mb={{ base: 4, sm: 0 }}>
           <Flex border="1px solid #eeeff1" p={2} gap={1} borderRadius={20} backgroundColor="#eeeff1">
             <BiSlider size={25} />
             <Text fontWeight={600}>Show Filters</Text>
@@ -81,28 +77,19 @@ const Things = () => {
           <Text p={2}>1,118 deals</Text>
         </Flex>
         <Flex gap={2}>
-          <Flex border="1px solid #eeeff1" p={2} gap={1} borderRadius={20} backgroundColor="#eeeff1">
-            <BiFilter size={25} />
-            <Text fontWeight={600}>Sort</Text>
-            <BiChevronDown size={25} />
-          </Flex>
-
           <Button leftIcon={<CiMap />} backgroundColor="white" border="1px solid" borderRadius={20}>
             Show on Map
           </Button>
         </Flex>
       </Flex>
 
-      <ThingData/>
+      <ThingData />
 
-      <ThingData/>
+      <ThingsQs />
 
-      <ThingsQs/>
-
-
-
-      <Flex direction="column">
-        <Text fontWeight={600} fontSize={25}>Frequently Asked Questions</Text>
+      {/* FAQ Section */}
+      <Flex direction="column" p={{ base: 4, sm: 10 }}>
+        <Text fontWeight={600} fontSize={{ base: '18px', sm: '25px' }}>Frequently Asked Questions</Text>
         <Accordion defaultIndex={[0]} allowMultiple>
           <AccordionItem>
             <h2>
@@ -142,7 +129,7 @@ const Things = () => {
               </AccordionButton>
             </h2>
             <AccordionPanel pb={4}>
-              There are numerous famous attractions in Chicago. These include the Navy Pier, the Art Institute of Chicago, the Skydeck Chicago - Willis Tower, and the Chicago Riverwalk, amongst others
+              There are numerous famous attractions in Chicago. These include the Navy Pier, the Art Institute of Chicago, the Skydeck Chicago - Willis Tower, and the Chicago Riverwalk, amongst others.
             </AccordionPanel>
           </AccordionItem>
 
@@ -173,15 +160,10 @@ const Things = () => {
               Chicago has a very comprehensive transportation system which includes the 'L' train, buses, taxis, rideshares like Uber and Lyft, and bike sharing with Divvy. It's also a walkable city with many attractions within walking distance depending on where you're staying.
             </AccordionPanel>
           </AccordionItem>
-
-
         </Accordion>
       </Flex>
 
-
-      <Thingsfo/>
-
-
+      <Thingsfo />
     </Box>
   )
 }

@@ -1,231 +1,128 @@
-import { Box ,Divider,Flex,Text} from '@chakra-ui/react'
-import React from 'react'
-import { CiGift } from 'react-icons/ci'
-import { GiKnifeFork } from 'react-icons/gi'
-import { GoChevronRight } from 'react-icons/go'
-import { IoBedOutline, IoLocationOutline } from 'react-icons/io5'
-import { PiFlowerLotusThin } from 'react-icons/pi'
-import { RiCouponLine, RiHomeOfficeLine } from 'react-icons/ri'
-import { SlBag } from 'react-icons/sl'
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
+import React from "react";
+import { CiGift } from "react-icons/ci";
+import { GiKnifeFork } from "react-icons/gi";
+import { GoChevronRight } from "react-icons/go";
+import { IoBedOutline, IoLocationOutline } from "react-icons/io5";
+import { PiFlowerLotusThin } from "react-icons/pi";
+import { RiCouponLine, RiHomeOfficeLine } from "react-icons/ri";
+import { SlBag } from "react-icons/sl";
 
 const Nearfo = () => {
   return (
     <Box padding={5}>
-        
-        <Flex direction="column" gap={2} h={80}>
-          <Text marginBottom={3} fontWeight={600} fontSize={20}>Popular categories</Text>
-          <Flex justifyContent="space-between">
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10} >
-           <Flex  textAlign="center" justifyContent="center"> <IoLocationOutline  size={25}/></Flex><Text textAlign="center">Nearby</Text>
+      <Flex direction="column" gap={4}>
+        <Text marginBottom={3} fontWeight={600} fontSize={{ base: 16, md: 20 }}>
+          Popular categories
+        </Text>
+        <Flex
+          flexWrap="wrap"
+          justifyContent={{ base: "center", md: "space-between" }}
+          gap={4}
+        >
+          {[
+            { icon: IoLocationOutline, label: "Nearby" },
+            { icon: CiGift, label: "Gifts" },
+            { icon: PiFlowerLotusThin, label: "Beauty & Spas" },
+            { icon: RiHomeOfficeLine, label: "Auto & Home Improvement" },
+            { icon: GiKnifeFork, label: "Food & Drink" },
+            { icon: SlBag, label: "Goods" },
+            { icon: IoBedOutline, label: "Travel" },
+            { icon: RiCouponLine, label: "Coupons" },
+          ].map((item, idx) => (
+            <Box
+              key={idx}
+              border="1px solid #eeeff1"
+              w={{ base: "45%", sm: "30%", md: "18%" }}
+              p={2}
+              h={70}
+              borderRadius={10}
+              textAlign="center"
+            >
+              <Flex justifyContent="center">
+                <item.icon size={25} />
+              </Flex>
+              <Text fontSize={{ base: 12, md: 14 }}>{item.label}</Text>
             </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10} >
-           <Flex  textAlign="center" justifyContent="center"><CiGift size={25}/></Flex><Text textAlign="center">Gifts</Text>
-            </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10} >
-           <Flex  textAlign="center" justifyContent="center"> <PiFlowerLotusThin size={20}/></Flex><Text textAlign="center">Beauty & Spas</Text>
-            </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={90} borderRadius={10} >
-           <Flex  textAlign="center" justifyContent="center"> <RiHomeOfficeLine  size={25}/></Flex><Text textAlign="center">Auto & Home Improvement</Text>
-            </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10}>
-           <Flex  textAlign="center" justifyContent="center"> <GiKnifeFork  size={25}/></Flex><Text textAlign="center">Food & Drink</Text>
-            </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10}>
-           <Flex  textAlign="center" justifyContent="center"> <SlBag  size={25}/></Flex><Text textAlign="center">Goods</Text>
-            </Box>
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10}>
-           <Flex  textAlign="center" justifyContent="center"> <IoBedOutline  size={25}/></Flex><Text textAlign="center">Travel</Text>
-            </Box>
-          </Flex>
-
-          </Flex>
-
-          <Flex>
-            <Box border="1px solid #eeeff1" w={150} p={2}  h={70} borderRadius={10} >
-           <Flex  textAlign="center" justifyContent="center"> <RiCouponLine  size={25}/></Flex><Text textAlign="center">Coupons</Text>
-            </Box>
-          </Flex>
+          ))}
         </Flex>
 
-        <Divider orientation='horizontal' />
+        <Divider orientation="horizontal" />
 
-        <Flex direction="column" marginTop={5} >
-         <Text marginBottom={3} fontWeight={600} fontSize={20}>Neighborhoods</Text>
-
-         <Flex justifyContent="space-between">
-         <Flex border="1px solid #eeeff1" w={160} p={1} borderRadius={10}>
-          <Text>Magnificent Mile</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={120} p={1} borderRadius={10}>
-          <Text>Wicker Park</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={90} p={1} borderRadius={10}>
-          <Text>O'Hare</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={130} p={1} borderRadius={10}>
-          <Text>Lincoln Park</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Uptown</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={120} p={1} borderRadius={10}>
-          <Text>Gold Coast</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={120} p={1} borderRadius={10}>
-          <Text>Lakeview</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          </Flex>
-          </Flex>
-
-          <Divider orientation='horizontal' marginTop={10}/>
-
-         <Flex direction="column" marginTop={5} >
-         <Text marginBottom={3} fontWeight={600} fontSize={20}>Searches Nearby</Text>
-
-         <Flex justifyContent="space-between" gap={5}>
-         <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Wheaton</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={90} p={1} borderRadius={10}>
-          <Text>Geneva</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Hammond</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={70} p={1} borderRadius={10}>
-          <Text>Elgin</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={90} p={1} borderRadius={10}>
-          <Text>Cicero</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={70} p={1} borderRadius={10}>
-          <Text>Lisle</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={120} p={1} borderRadius={10}>
-          <Text>Orland Park</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Waukegan</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          
-          </Flex>
-          </Flex>
-          
-          <Divider orientation='horizontal' marginTop={10}/>
-
-          <Flex direction="column" marginTop={5} >
-         <Text marginBottom={3} fontWeight={600} fontSize={20}>Popular Searches</Text>
-
-         <Flex justifyContent="space-between">
-         <Flex border="1px solid #eeeff1" w={90} p={1} borderRadius={10}>
-          <Text>Aurora</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={120} p={1} borderRadius={10}>
-          <Text>Schaumburg</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Evanston</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={90} p={1} borderRadius={10}>
-          <Text>Justice</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Elmhurst</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={160} p={1} borderRadius={10}>
-          <Text>Hoffman Estates</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Naperville</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Naperville</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          <Flex border="1px solid #eeeff1" w={100} p={1} borderRadius={10}>
-          <Text>Oak Park</Text>
-          <GoChevronRight size={25} />
-          </Flex>
-
-          </Flex>
-          </Flex>
-   
-          
-
-         
-
-          
-
-
-
-           
-         
+        {[
+          {
+            title: "Neighborhoods",
+            items: [
+              "Magnificent Mile",
+              "Wicker Park",
+              "O'Hare",
+              "Lincoln Park",
+              "Uptown",
+              "Gold Coast",
+              "Lakeview",
+            ],
+          },
+          {
+            title: "Searches Nearby",
+            items: [
+              "Wheaton",
+              "Geneva",
+              "Hammond",
+              "Elgin",
+              "Cicero",
+              "Lisle",
+              "Orland Park",
+              "Waukegan",
+            ],
+          },
+          {
+            title: "Popular Searches",
+            items: [
+              "Aurora",
+              "Schaumburg",
+              "Evanston",
+              "Justice",
+              "Elmhurst",
+              "Hoffman Estates",
+              "Naperville",
+              "Oak Park",
+            ],
+          },
+        ].map((section, idx) => (
+          <Box key={idx}>
+            <Text
+              marginBottom={3}
+              fontWeight={600}
+              fontSize={{ base: 16, md: 20 }}
+            >
+              {section.title}
+            </Text>
+            <Flex
+              flexWrap="wrap"
+              justifyContent={{ base: "center", md: "space-between" }}
+              gap={4}
+            >
+              {section.items.map((item, index) => (
+                <Flex
+                  key={index}
+                  border="1px solid #eeeff1"
+                  w={{ base: "45%", sm: "30%", md: "18%" }}
+                  p={2}
+                  borderRadius={10}
+                  alignItems="center"
+                  justifyContent="space-between"
+                >
+                  <Text fontSize={{ base: 12, md: 14 }}>{item}</Text>
+                  <GoChevronRight size={20} />
+                </Flex>
+              ))}
+            </Flex>
+            <Divider orientation="horizontal" marginTop={5} />
+          </Box>
+        ))}
+      </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default Nearfo
+export default Nearfo;

@@ -2,62 +2,95 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
-import { Flex,Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaBorderAll } from "react-icons/fa";
 import { PiBroomBold, PiEyeDuotone } from "react-icons/pi";
 import { MdFace3, MdOutlinePanoramaPhotosphere } from "react-icons/md";
 import { BiInjection } from "react-icons/bi";
 import { TbMassage, TbVaccineBottle } from "react-icons/tb";
 
-
-
 function Beautylogo() {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5
+    slidesToShow: 5, // Default for large screens
+    slidesToScroll: 5, // Scroll 5 items at a time
+    responsive: [
+      {
+        breakpoint: 1024, // Medium screens (tablets)
+        settings: {
+          slidesToShow: 3, // Show 3 items
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 600, // Small screens (mobiles)
+        settings: {
+          slidesToShow: 1, // Show 1 item
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
-    <div className="slider-container" style={{padding:"10px"}}>
+    <Box padding={4}>
       <Slider {...settings}>
-       <Flex  >
-        <Flex border="1px solid #eeeff1" w={20} gap={1} p={2} borderRadius={10}> <FaBorderAll size={25}/> <Text>All</Text></Flex>
-       </Flex>
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={210} gap={1} p={2} borderRadius={10}> <PiBroomBold size={25}/> <Text>Face & Skin Care</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>500+</Text></Flex>
-       </Flex>
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={250} gap={1} p={2} borderRadius={10}> <BiInjection size={25}/> <Text>Cosmetic Procedures</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>467+</Text></Flex>
-       </Flex>
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <FaBorderAll size={25} />
+          <Text textAlign="center">All</Text>
+        </Flex>
 
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={150} gap={1} p={2} borderRadius={10}> <MdFace3 size={25}/> <Text>Salons</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>335+</Text></Flex>
-       </Flex>
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <PiBroomBold size={25} />
+          <Text textAlign="center">Face & Skin Care</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>500+</Text>
+        </Flex>
 
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={150} gap={1} p={2} borderRadius={10}> <TbMassage size={25}/> <Text>Massage</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>335+</Text></Flex>
-       </Flex>
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={190} gap={1} p={2} borderRadius={10}> <TbVaccineBottle size={25}/> <Text>Hair Removal</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>201+</Text></Flex>
-       </Flex>
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <BiInjection size={25} />
+          <Text textAlign="center">Cosmetic Procedures</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>467+</Text>
+        </Flex>
 
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={210} gap={1} p={2} borderRadius={10}> <PiEyeDuotone size={25}/> <Text>Brows & Lashes</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>197+</Text></Flex>
-       </Flex>
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={190} gap={1} p={2} borderRadius={10}> <MdFace3 size={25}/> <Text>Hair & Styling</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>177+</Text></Flex>
-       </Flex>
-       <Flex >
-        <Flex border="1px solid #eeeff1" w={150} gap={1} p={2} borderRadius={10}> <MdOutlinePanoramaPhotosphere size={25}/> <Text>Spas</Text> <Text border="1px solid #eeeff1" backgroundColor="#eeeff1" borderRadius={10} fontSize={10} p={1}>156+</Text></Flex>
-       </Flex>
-       
-       
-    
-        
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <MdFace3 size={25} />
+          <Text textAlign="center">Salons</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>335+</Text>
+        </Flex>
+
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <TbMassage size={25} />
+          <Text textAlign="center">Massage</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>335+</Text>
+        </Flex>
+
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <TbVaccineBottle size={25} />
+          <Text textAlign="center">Hair Removal</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>201+</Text>
+        </Flex>
+
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <PiEyeDuotone size={25} />
+          <Text textAlign="center">Brows & Lashes</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>197+</Text>
+        </Flex>
+
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <MdFace3 size={25} />
+          <Text textAlign="center">Hair & Styling</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>177+</Text>
+        </Flex>
+
+        <Flex direction="column" align="center" border="1px solid #eeeff1" borderRadius="10px" p={3} >
+          <MdOutlinePanoramaPhotosphere size={25} />
+          <Text textAlign="center">Spas</Text>
+          <Text fontSize="xs" bg="#eeeff1" borderRadius="10px" p={1}>156+</Text>
+        </Flex>
       </Slider>
-    </div>
+    </Box>
   );
 }
 

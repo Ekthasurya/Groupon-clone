@@ -15,7 +15,6 @@ import Coupons from './pages/Coupons';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ToggleContentExample from './components/MiniFooter';
-import Snavbar from './components/Snavbar';
 import NearSingle from './pages/NearSingle';
 import GiftSingle from './pages/GiftSingle';
 import BeautySingle from './pages/BeautySingle'
@@ -24,6 +23,8 @@ import GoodSingle from './pages/GoodSingle';
 import FoodSingle from './pages/FoodSingle';
 import ThingSingle from './pages/ThingSingle';
 import HomeSingle from './pages/HomeSingle';
+import CartPage from './pages/CartPage';
+import PaymentPage from './pages/PaymentPage';
 
 
 
@@ -52,7 +53,9 @@ function App() {
       <Route path='/goods/:_id' element={<GoodSingle/>} />
       <Route path='/travel' element={<Travel/>}/>
       <Route path='/travel/:_id' element={<TravelSingle/>} />
-    <Route path='/coupons' element={<Coupons/>}/>
+      <Route path='/coupons' element={<Coupons/>}/>
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/payment" element={<PaymentPage />} />
     </Routes>
     <ToggleContentExample/>
     <Footer/>

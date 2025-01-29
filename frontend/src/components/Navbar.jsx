@@ -340,7 +340,7 @@ const Navbar = () => {
     <DrawerOverlay>
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader>Menu</DrawerHeader>
+        <DrawerHeader>GROUPON</DrawerHeader>
         <DrawerBody>
           <Stack spacing={4}>
             <Link to="/nearby">

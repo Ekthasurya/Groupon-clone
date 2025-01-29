@@ -31,14 +31,14 @@ const BeautyData = () => {
           variant={sortOrder === 'asc' ? 'solid' : 'outline'}
           onClick={() => handleSort('asc')}
         >
-          Sort by Price: Low to High
+          Low to High
         </Button>
         <Button
           colorScheme="teal"
           variant={sortOrder === 'desc' ? 'solid' : 'outline'}
           onClick={() => handleSort('desc')}
         >
-          Sort by Price: High to Low
+          High to Low
         </Button>
       </Flex>
 

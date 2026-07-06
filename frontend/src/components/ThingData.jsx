@@ -9,7 +9,7 @@ const ThingData = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // State for sorting order
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/thing/get-things')
+    fetch('https://groupon-clone-2.onrender.com/thing/get-things')
       .then((res) => res.json())
       .then((res) => setData(res.thing));
   }, []);

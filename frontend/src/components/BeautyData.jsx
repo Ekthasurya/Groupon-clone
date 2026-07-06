@@ -9,7 +9,7 @@ const BeautyData = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // State to manage sort order
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/beauty/get-beauties')
+    fetch('https://groupon-clone-2.onrender.com/beauty/get-beauties')
       .then((res) => res.json())
       .then((res) => setData(res.beauty));
   }, []);

@@ -9,7 +9,7 @@ const FoodData = () => {
   const [sortOrder, setSortOrder] = useState('asc');
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/food/get-foods')
+    fetch('https://groupon-clone-2.onrender.com/food/get-foods')
       .then((res) => res.json())
       .then((res) => setData(res.food));
   }, []); // Added an empty dependency array to avoid repeated fetching

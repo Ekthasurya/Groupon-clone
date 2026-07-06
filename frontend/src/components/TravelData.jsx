@@ -9,7 +9,7 @@ const TravelData = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // State for sorting order
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/travel/get-travels')
+    fetch('https://groupon-clone-2.onrender.com/travel/get-travels')
       .then((res) => res.json())
       .then((res) => setData(res.travel));
   }, []);

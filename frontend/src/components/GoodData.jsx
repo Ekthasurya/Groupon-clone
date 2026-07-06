@@ -9,7 +9,7 @@ const GoodData = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // State for sorting order
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/good/get-goods')
+    fetch('https://groupon-clone-2.onrender.com/good/get-goods')
       .then((res) => res.json())
       .then((res) => setData(res.good));
   }, []); // Fetch data only once on mount

@@ -9,7 +9,7 @@ const NearData = () => {
   const [sortOrder, setSortOrder] = useState('asc'); // State to track the sorting order
 
   useEffect(() => {
-    fetch('https://groupon-backend-2.onrender.com/near/get-nears')
+    fetch('https://groupon-clone-2.onrender.com/near/get-nears')
       .then((res) => res.json())
       .then((res) => setData(res.near));
   }, []); // Fetch data once when the component mounts
